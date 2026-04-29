@@ -15,7 +15,7 @@ The problem is, they could be creating their blog posts much more efficiently. I
 4. `npm run dev`
 
 After it has installed, go to the link below to check out the blog post we will be refactoring:
-[Cost of Living in NYC in April 2018. Has it changed?  ](https://streeteasy.com/blog/cost-of-living-nyc-income-housing-all-5-boroughs/)
+[Cost of Living in NYC in April 2018. Has it changed since then? ](https://streeteasy.com/blog/cost-of-living-nyc-income-housing-all-5-boroughs/)
 
 
 ## The Lab
