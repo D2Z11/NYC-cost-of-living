@@ -2,6 +2,17 @@
 import './DataView.css';
 
 function DataView(props) {
+  const calculateRatio = (cost, income) => {
+    // remove all dollar signs and commas and convert to number
+    const costNum = parseFloat(cost.replace(/[$,]/g, ''));
+    const incomeNum = parseFloat(income.replace(/[$,]/g, ''));
+    const ratio = ((costNum / incomeNum) * 100).toFixed(1);
+    return ratio + '%';
+  };
+
+  const renterRatio = calculateRatio(props.renterCost, props.renterIncome);
+  const ownerRatio = calculateRatio(props.ownerCost, props.ownerIncome);
+
   return(
     <div className="view">
       <div className="view-column">
@@ -19,9 +30,13 @@ function DataView(props) {
               <h2 className="text-data">{props.renterCost}</h2>
               <h3 className="text-label">Annual Housing Cost</h3>
             </div>
-            <div className="text bottom">
+            <div className="text">
               <h2 className="text-data">{props.renterIncome}</h2>
               <h3 className="text-label">Annual Income</h3>
+            </div>
+            <div className="text bottom">
+              <h2 className="text-data">{renterRatio}</h2>
+              <h3 className="text-label">Cost-To-Income Ratio</h3>
             </div>
           </div>
           <div className="data-view-column right">
@@ -32,11 +47,18 @@ function DataView(props) {
               <h2 className="text-data">{props.ownerCost}</h2>
               <h3 className="text-label">Annual Housing Cost</h3>
             </div>
-            <div className="text bottom">
+            <div className="text">
               <h2 className="text-data">{props.ownerIncome}</h2>
               <h3 className="text-label">Annual Income</h3>
             </div>
+            <div className="text bottom">
+              <h2 className="text-data">{ownerRatio}</h2>
+              <h3 className="text-label">Cost-To-Income Ratio</h3>
+            </div>
           </div>
+        </div>
+        <div className="message">
+          <p>{props.message}</p>
         </div>
       </div>
     </div>
